@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:gravity="center"
+        android:textSize="45sp"
+        android:textColor="@color/black"
+        android:id="@+id/titulo"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBorde"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayoutNombre">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            app:cardCornerRadius="60dp">
+
+            <ImageView
+                android:id="@+id/imagen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hq2" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textInputLayoutNombre"
+        app:layout_constraintTop_toBottomOf="@id/cardBorde"
+        android:layout_margin="30dp"
+        android:hint="Nombre"
+        android:focusable="false"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayoutApellido"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textInputEditTextNombre"
+            android:text="Miguelillo el makina"
+            android:focusable="false"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textInputLayoutApellido"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayoutNombre"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayoutEdad"
+        android:layout_margin="30dp"
+        android:hint="Apellidos"
+        android:focusable="false"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textInputEditTextApellido"
+            android:text="El makina"
+            android:focusable="false"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textInputLayoutEdad"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayoutApellido"
+        android:layout_margin="30dp"
+        android:hint="Edad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:focusable="false"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textInputEditTextEdad"
+            android:text="69"
+            android:focusable="false"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
