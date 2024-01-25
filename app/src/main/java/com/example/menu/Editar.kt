@@ -94,10 +94,6 @@ class Editar : AppCompatActivity() {
         }
     }
 
-    private fun cambiarImagen() {
-
-    }
-
     private fun launchIntent(intent: Intent) {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
@@ -140,7 +136,7 @@ class Editar : AppCompatActivity() {
             intent.putExtra("apellido", binding.textInputEditTextApellido.text.toString())
             intent.putExtra("edad", binding.textInputEditTextEdad.text.toString())
             intent.putExtra("posicion", posicion)
-            intent.putExtra("foto", uri)
+            intent.putExtra("foto", uri.toString())
 
             startActivity(intent)
         }
