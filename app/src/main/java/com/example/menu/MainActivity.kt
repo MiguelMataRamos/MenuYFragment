@@ -1,6 +1,7 @@
 package com.example.menu
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     var apellido: String? = null
     var edad: String? = null
     var posicion: Int = 0
+    var uri : String ? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +27,10 @@ class MainActivity : AppCompatActivity() {
         apellido = intent.getStringExtra("apellido")
         edad = intent.getStringExtra("edad")
         posicion = intent.getIntExtra("posicion",0)
+        uri = intent.getStringExtra("foto")
 
         if (nombre == null) {
-            nombre = "Miguelillooo"
+            nombre = "Miguelillo"
         }
         if (apellido == null) {
             apellido = "El Makina"
@@ -35,8 +38,14 @@ class MainActivity : AppCompatActivity() {
         if (edad == null) {
             edad = "66"
         }
+        if (uri == null) {
+            bind.imagen.setImageResource(fotos[posicion])
+        }else{
+            bind.imagen.setImageURI(Uri.parse(uri))
+        }
+        print(uri)
 
-        bind.imagen.setImageResource(fotos[posicion])
+
         bind.textInputEditTextNombre.setText(nombre)
         bind.textInputEditTextApellido.setText(apellido)
         bind.textInputEditTextEdad.setText(edad)
