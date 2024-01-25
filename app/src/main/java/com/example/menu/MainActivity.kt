@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     var apellido: String? = null
     var edad: String? = null
     var posicion: Int = 0
-    var uri : String ? = null
+    var uriString : String ? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         apellido = intent.getStringExtra("apellido")
         edad = intent.getStringExtra("edad")
         posicion = intent.getIntExtra("posicion",0)
-        uri = intent.getStringExtra("foto")
+        uriString = intent.getStringExtra("foto")
 
         if (nombre == null) {
             nombre = "Miguelillo"
@@ -38,12 +38,11 @@ class MainActivity : AppCompatActivity() {
         if (edad == null) {
             edad = "66"
         }
-        if (uri == null) {
+        if (uriString == null) {
             bind.imagen.setImageResource(fotos[posicion])
         }else{
-            bind.imagen.setImageURI(Uri.parse(uri))
+            bind.imagen.setImageURI(Uri.parse(uriString))
         }
-        print(uri)
 
 
         bind.textInputEditTextNombre.setText(nombre)
@@ -64,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("apellido",bind.textInputEditTextApellido.text.toString())
             intent.putExtra("edad",bind.textInputEditTextEdad.text.toString())
             intent.putExtra("posicion",posicion)
+            intent.putExtra("foto",uriString)
             startActivity(intent)
         }
         return super.onOptionsItemSelected(item)

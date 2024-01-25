@@ -20,7 +20,7 @@ class Editar : AppCompatActivity() {
     var edad: String? = null
     var posicion: Int = 0
     var foto: Drawable? = null
-    var uri: Uri? = null
+    var uriString: String? = null
 
 
     companion object {
@@ -39,12 +39,20 @@ class Editar : AppCompatActivity() {
         apellido = intent.getStringExtra("apellido")
         edad = intent.getStringExtra("edad")
         posicion = intent.getIntExtra("posicion", 0)
+        uriString = intent.getStringExtra("foto")
 
 
         binding.imagen.setImageResource(fotos[posicion])
         binding.textInputEditTextNombre.setText(nombre)
         binding.textInputEditTextApellido.setText(apellido)
         binding.textInputEditTextEdad.setText(edad)
+
+        if (uriString == null) {
+            binding.imagen.setImageResource(fotos[posicion])
+        }else{
+            binding.imagen.setImageURI(Uri.parse(uriString))
+        }
+
 
         binding.next.setOnClickListener {
             animateImageView(binding.imagen)
@@ -87,7 +95,8 @@ class Editar : AppCompatActivity() {
             // Comprobar que la respuesta es correcta
             if (resultCode == RESULT_OK) {
                 // Recoger el valor del extra resultante
-                uri = data?.data
+                var uri = data?.data
+                uriString = uri.toString()
                 binding.imagen.setImageURI(uri)
                 foto = binding.imagen.drawable
             }
@@ -136,7 +145,7 @@ class Editar : AppCompatActivity() {
             intent.putExtra("apellido", binding.textInputEditTextApellido.text.toString())
             intent.putExtra("edad", binding.textInputEditTextEdad.text.toString())
             intent.putExtra("posicion", posicion)
-            intent.putExtra("foto", uri.toString())
+            intent.putExtra("foto", uriString)
 
             startActivity(intent)
         }
