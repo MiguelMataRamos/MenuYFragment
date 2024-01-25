@@ -1,11 +1,13 @@
 package com.example.menu
 
 import android.animation.ObjectAnimator
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.LinearInterpolator
@@ -49,7 +51,7 @@ class Editar : AppCompatActivity() {
 
         if (uriString == null) {
             binding.imagen.setImageResource(fotos[posicion])
-        }else{
+        } else {
             binding.imagen.setImageURI(Uri.parse(uriString))
         }
 
@@ -85,8 +87,23 @@ class Editar : AppCompatActivity() {
 
         }
 
+//        binding.titulo.setOnClickListener {
+//            dispatchTakePictureIntent()
+//        }
+
 
     }
+
+//    val REQUEST_IMAGE_CAPTURE = 1
+//
+//    private fun dispatchTakePictureIntent() {
+//        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//        try {
+//            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+//        } catch (e: ActivityNotFoundException) {
+//            // display error state to the user
+//        }
+//    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -101,6 +118,12 @@ class Editar : AppCompatActivity() {
                 foto = binding.imagen.drawable
             }
         }
+
+//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+//            var uri = data?.data
+//            uriString = uri.toString()
+//            binding.imagen.setImageURI(uri)
+//        }
     }
 
     private fun launchIntent(intent: Intent) {
