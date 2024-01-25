@@ -55,6 +55,10 @@ class Editar : AppCompatActivity() {
             binding.imagen.setImageResource(fotos[posicion])
         }
 
+        binding.imagen.setOnClickListener {
+
+        }
+
 
 
     }
