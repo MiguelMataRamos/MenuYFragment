@@ -57,6 +57,7 @@ class Editar : AppCompatActivity() {
 
         binding.imagen.setOnClickListener {
 
+
         }
 
 
