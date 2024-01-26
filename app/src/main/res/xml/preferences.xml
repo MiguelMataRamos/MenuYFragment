@@ -4,11 +4,11 @@
     <!-- Un boton para cerrar el fragmento arriba a la derecha-->
 
     <Preference
+        app:layout="@layout/preference_widget_close"
         android:title="Ajustes"
         app:icon="@drawable/baseline_close_24"
         app:key="cerrar"
-        app:layout="@layout/preference_widget_close" />
-
+        />
 
 
     <SwitchPreferenceCompat
