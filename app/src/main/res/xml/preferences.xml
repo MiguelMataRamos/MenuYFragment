@@ -1,0 +1,21 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Un boton para cerrar el fragmento arriba a la derecha-->
+
+    <Preference
+        android:title="Ajustes"
+        app:icon="@drawable/baseline_close_24"
+        app:key="cerrar"
+        app:layout="@layout/preference_widget_close" />
+
+
+
+    <SwitchPreferenceCompat
+        app:defaultValue="true"
+        app:key="notificaciones"
+        app:summary="Activar o desactivar notificaciones"
+        app:title="Notificaciones" />
+
+
+</PreferenceScreen>

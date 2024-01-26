@@ -65,7 +65,13 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("posicion",posicion)
             intent.putExtra("foto",uriString)
             startActivity(intent)
+        }else if (item.itemId == R.id.action2) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.frameLayout, SettingsFragment())
+                .commit()
+
         }
+
         return super.onOptionsItemSelected(item)
     }
 }

@@ -7,4 +7,10 @@
         android:icon="@drawable/edit"
 
         />
+
+    <item
+        android:id="@+id/action2"
+        android:title="Ajustes"
+        android:icon="@drawable/edit"
+        />
 </menu>
