@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tamanios">
+        <item>Pequeña</item>
+        <item>Normal</item>
+        <item>Grande</item>
+    </string-array>
+
+    <string-array name="tamanios_sp">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

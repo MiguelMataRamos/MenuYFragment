@@ -17,5 +17,13 @@
         app:summary="Activar o desactivar notificaciones"
         app:title="Notificaciones" />
 
+    <ListPreference
+        app:defaultValue="1"
+        app:entries="@array/tamanios"
+        app:entryValues="@array/tamanios_sp"
+        app:key="letras"
+        app:summary="Intervalo de actualización de datos"
+        app:title="Tamaño de la letra" />
+
 
 </PreferenceScreen>
